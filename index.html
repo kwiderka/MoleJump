@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-title" content="oh, flip!">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="style.css" />
+
+        <title>Mole flip!</title>
+
+        <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            border: 0;
+            overflow: hidden; /*  Disable scrollbars */
+            display: block;  /* No floating content on sides */
+            background-color: black;
+        }
+
+        #game {
+			display: none;
+		}
+        #result-screen{
+            display: none;
+        }
+        #options-screen{
+            display: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <center>
+            <div id="start-screen">
+                <h1>
+                    Skaczący krecik!
+                </h1>
+                <div class="buttons">
+                    <button class="button-55" id="play-button">Graj!</button>
+                    <button class="button-55" id="option-button">Info</button>
+                </div>
+                <br> <br>
+                <div class="container">
+                    <center>
+                    <img id="image1" src="pngwing.com.png" alt="Mole">
+                    </center>
+                    <br> <br>
+                    <img src="trampolina_nogi.png" alt="Trampoline">
+                </div>
+                <h2>Skacz jak najwyżej, rób salta oraz wykonuj zadania!</h2>
+            </div>
+            <div id="options-screen">
+                <img src="board.png" alt="board" class="info"> <br>
+                <button id="back-button" class="button-55">Powrót</button>
+            </div>
+            <div id="game">
+                <canvas id="canvas" width="900px" height="900px"></canvas>
+            </div>
+            <script src="main.js"></script>
+
+            <div id="result-screen">
+                <h1 id="bravo">Brawo!</h1>
+                <p id="done">Ukończyłeś wszystkie wyzwania!</p>
+                <h2>
+                    Maksymalna wysokość: <span id="maxheightft"></span> <br>
+                    Najwięcej salt: <span id="maxtotalflips"></span>
+                </h2>
+                <div class="buttons">
+                    <button class="button-55" id="playAgainButton">Graj ponownie!</button>
+                    <button class="button-55" id="mainMenuButton">Menu</button>
+                </div>
+            </div>
+            </center>
+        </div>
+    </body>
+    <audio id="myAudio" src="moleinthehole.m4a"></audio>
+    <img id="audioButton" src="mute.png" alt="playbutton" style="width: 48px; height: 48px;" onclick="mute()"></img>
+    <script>
+        var audio = document.getElementById("myAudio");
+        var playButton = document.getElementById("playButton");
+        audio.volume = 0.1;
+
+        function startPlayback() {
+            audio.play();
+        }
+        function mute(){
+            audio.volume = 0;
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            playButton.addEventListener("click", startPlayback);
+        });
+    </script>
+    <script>
+		var playButton = document.getElementById("play-button");
+		var optionButton = document.getElementById("option-button");
+		var backButton = document.getElementById("back-button");
+		var playAgainButton = document.getElementById("playAgainButton");
+		var mainMenuButton = document.getElementById("mainMenuButton");
+
+		
+		playButton.addEventListener("click", function() {
+			// ukrywamy div start-screen
+			document.querySelector("#start-screen").style.display = "none";
+			
+			// pokazujemy div game
+			document.getElementById("game").style.display = "block";
+		});
+        optionButton.addEventListener("click", function() {
+			document.querySelector("#start-screen").style.display = "none";
+
+			document.getElementById("options-screen").style.display = "block";
+		});
+        backButton.addEventListener("click", function() {
+			document.querySelector("#start-screen").style.display = "block";
+			
+			document.getElementById("options-screen").style.display = "none";
+		});
+
+        playAgainButton.addEventListener("click", function() {
+			document.querySelector("#game").style.display = "block";
+			
+			document.getElementById("result-screen").style.display = "none";
+		});
+        mainMenuButton.addEventListener("click", function() {
+			document.querySelector("#start-screen").style.display = "block";
+			
+			document.getElementById("result-screen").style.display = "none";
+		});
+	</script>
+</html>

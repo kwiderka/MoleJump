@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+body {
+  font-family: "Paytone One";
+  background-image: url("bg.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden !important;
+}
+
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+#result-screen{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+#done{
+  font-size: 40px;
+  font-family: 'Paytone One';
+  text-align: center;
+  text-shadow: -2px -2px 0 #000, /* shadow color and offset */ 2px -2px 0 #000,
+    -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+h1{
+  font-family: 'Paytone One';
+  text-align: center;
+  font-size: 100px;
+  text-shadow: -2px -2px 0 #000, /* shadow color and offset */ 2px -2px 0 #000,
+    -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+h2{
+  color: #9dcf79;
+  text-align: center;
+  text-shadow: -2px -2px 0 #000, /* shadow color and offset */ 2px -2px 0 #000,
+    -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+
+
+/* CSS */
+.button-55 {
+  align-self: center;
+  /* background-color: #6e5a3c;   */
+  background-color: #bd9a65;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Paytone One', sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  text-align: center;
+  width: 150px;
+  text-shadow: -2px -2px 0 #000, /* shadow color and offset */ 2px -2px 0 #000,
+    -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+#options-screen{
+  align-items: center;
+} 
+
+.info{
+  width: 700px;
+}
+
+
+.container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Odstęp między obrazami */
+}
+
+#bravo{
+  animation: shakeAndScale 4s infinite;
+}
+
+#image1 {
+
+  max-width: 20%; /* Maksymalna szerokość obrazu */
+  max-height: 50vh; /* Maksymalna wysokość obrazu (50% wysokości widoku) */
+  animation: shakeAndScale 4s infinite; /* Animacja dla pierwszego obrazu */
+}
+
+@keyframes shakeAndScale {
+  0% {
+    transform: scale(1); /* Początkowy rozmiar obrazu */
+  }
+  50% {
+    transform: scale(1.4) rotate(5deg); /* Powiększenie i potrząśnięcie obrazu */
+  }
+  100% {
+    transform: scale(1); /* Powrót do początkowego rozmiaru */
+  }
+}
+
+#audioButton {
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+#audioButton:hover {
+  transform: scale(0.9);
+}
+
+#audioButton:active {
+  transform: scale(0.8);
+}
+
+
+
+
+
+
+
